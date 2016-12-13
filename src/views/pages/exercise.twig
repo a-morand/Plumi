@@ -30,8 +30,11 @@
                         <div class="box box-1" style="display:none" data-audio="{{ question.text|e }}" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
                             <h1>Complète le mot</h1>
                             <p class="question-input">{{ question.input }}</p>
+                            <p class="answer" style="display: none">{{ question.text|e }}</p>
                             <div class="proposals"></div>
                             <input type="text" name="{{loop.index}}[answer]" class="input-answer">
+                            <p class="success" style="display: none">Félicitations</p>
+                            <p class="fail" style="display: none">Mauvaise réponse</p>
                     {% elseif question.type == 2 %}
                         <div class="box box-2" style="display:none" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
                             <h1>Trouve le bon mot</h1>
@@ -44,7 +47,8 @@
                             <p class="question-text">{{ question.text }}</p>
                             <input type="text" name="{{loop.index}}[answer]" class="input-answer">
                     {% endif %}
-                        <button class="button button-next is-primary" type="button">Question suivante</button>
+                        <button class="button button-validate is-primary" type="button">Valider</button>
+                        <button class="button button-next is-primary" style="display:none" type="button">Question suivante</button>
                         <button class="button button-sound is-primary" type="button">Son</button>
                     </div>
                 {% endfor %}

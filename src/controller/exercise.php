@@ -42,6 +42,6 @@ class Exercise
         $exercise = new \Model\Exercise($app['db']);
         $exercise->insert($user_id, $post);
 
-        return $app['twig']->render('pages/result.twig', $this->config);
+        return $app['twig']->render('pages/home.twig', $this->config);
     }
 }
