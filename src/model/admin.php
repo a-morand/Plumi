@@ -3,9 +3,9 @@
 namespace Model;
 
 /**
- * Signup
+ * Admin
  */
-class Signup
+class Admin
 {
     private $db;
     private $session;

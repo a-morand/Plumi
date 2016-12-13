@@ -6,17 +6,17 @@ use \Silex\Application;
 use \Symfony\Component\HttpFoundation\Request;
 
 /**
- * Signup page
+ * Admin page
  */
-class Signup
+class Admin
 {
     private $config = [
-        'title' => 'Signup'
+        'title' => 'Admin'
     ];
 
     public function get(Request $request, Application $app)
     {
-        return $app['twig']->render('pages/signup.twig', $this->config);
+        return $app['twig']->render('pages/admin.twig', $this->config);
     }
 
     public function post(Request $request, Application $app)
@@ -26,12 +26,12 @@ class Signup
         $username = $post['username'];
         $password = $post['password'];
 
-        $user = new \Model\Signup($app['db'], $app['session']);
+        $user = new \Model\Admin($app['db'], $app['session']);
 
         if ($user->signup($username, $password)) {
             return $app->redirect($app['url_generator']->generate('home'));
         } else {
-            return $app['twig']->render('pages/signup.twig', $this->config);
+            return $app['twig']->render('pages/admin.twig', $this->config);
         }
     }
 }

@@ -29,7 +29,7 @@ class Login
         $user = new \Model\User($app['db'], $app['session']);
 
         if ($user->login($username, $password)) {
-            return $app->redirect($app['url_generator']->generate('home'));
+            return $app->redirect($app['url_generator']->generate('hub'));
         }
 
         return $app['twig']->render('pages/login.twig', $this->config + [

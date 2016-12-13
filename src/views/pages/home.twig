@@ -1,44 +1,8 @@
 {% include 'partials/head.twig' %}
-
-<section class="hero is-info is-fullheight is-bold">
-    <div class="hero-head">
+<div class="hero-head">
         {% include 'partials/nav.twig' %}
-    </div>
-
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <h1 class="title is-2">
-                Welcome to {{sitename}}
-            </h1>
-            <h2 class="subtitle is-4">
-                Subtitle
-            </h2>
-            <div class="has-text-centered">
-                <a class="button is-success" href="{{ url('exercise', {type: 1, id: 1}) }}">
-                    <span class="icon"> <i class="fa fa-music"></i> </span>
-                    <span>Exercise 1</span>
-                </a>
-                <a class="button is-success" href="{{ url('exercise', {type: 1, id: 2}) }}">
-                    <span class="icon"> <i class="fa fa-book"></i> </span>
-                    <span>Exercise 2</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="hero-foot">
-        <nav class="tabs">
-            <div class="container">
-                <ul>
-                    <li><a>Copyright &copy; {{ 'now'|date('Y') }} {{sitename}}</a></li>
-                    <li><a>Privacy Policy</a></li>
-                    <li><a>Terms of Use</a></li>
-                    <li><a>Legal</a></li>
-                    <li><a>Language</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</section>
-
+</div>
+<h1>PLUMI</h1>
+<a class="button is-success" href="{{ url('login') }}">Login</a>
+<a href="{{ url('admin') }}">Se connecter en tant qu'administrateur</a>
 {% include 'partials/foot.twig' %}
