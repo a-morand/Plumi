@@ -1,0 +1,61 @@
+{% include 'partials/head.twig' %}
+
+<section class="hero is-info is-bold">
+    <div class="hero-head">
+        {% include 'partials/nav.twig' %}
+    </div>
+
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title is-2">
+                Exercise
+            </h1>
+            <h2 class="subtitle is-4">
+                Subtitle
+            </h2>
+        </div>
+    </div>
+</section>
+
+{% if questions is not empty %}
+    <script>var exercise = true;</script>
+    <section class="section">
+        <div class="container">
+            <form method="POST" class="exercise">
+                {% for question in questions %}
+                    <input type="hidden" name="{{loop.index}}[type_id]" value="{{question.type}}">
+                    <input type="hidden" name="{{loop.index}}[question_id]" value="{{question.id}}">
+                    <input type="hidden" name="{{loop.index}}[success]" value="0">
+                    {% if question.type == 1 %}
+                        <div class="box box-1" style="display:none" data-audio="{{ question.text|e }}" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
+                            <h1>Complète le mot</h1>
+                            <p class="question-input">{{ question.input }}</p>
+                            <div class="proposals"></div>
+                            <input type="text" name="{{loop.index}}[answer]" class="input-answer">
+                    {% elseif question.type == 2 %}
+                        <div class="box box-2" style="display:none" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
+                            <h1>Trouve le bon mot</h1>
+                            <p class="question-proposals">{{ question.proposals }}</p>
+                            <p class="question-tips">{{ question.tips }}</p>
+                            <input type="text" name="{{loop.index}}[answer]" class="input-answer">
+                    {% elseif question.type == 3 %}
+                        <div class="box box-3" style="display:none" data-answer="{{ question.text|e }}">
+                            <h1>Dictée</h1>
+                            <p class="question-text">{{ question.text }}</p>
+                            <input type="text" name="{{loop.index}}[answer]" class="input-answer">
+                    {% endif %}
+                        <button class="button button-next is-primary" type="button">Question suivante</button>
+                        <button class="button button-sound is-primary" type="button">Son</button>
+                    </div>
+                {% endfor %}
+                <div class="box" style="display: none;">
+                    <h1>Bravo, clique pour envoyer</h1>
+                    <button class="button is-primary" type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endif %}
+
+{% include 'partials/foot.twig' %}

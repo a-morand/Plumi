@@ -1,0 +1,29 @@
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-left">
+                <a class="nav-item" href="{{app.request.basepath}}/">
+                    <span class="title is-4">{{sitename}}</span>
+                </a>
+            </div>
+
+            <span class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <div class="nav-right nav-menu">
+                <a class="nav-item" href="{{ url('home') }}">Home</a>
+                <a class="nav-item" href="{{ url('exercise', {type: 1, id: 1}) }}">Exercise 1</a>
+                <a class="nav-item" href="{{ url('exercise', {type: 2, id: 1}) }}">Exercise 2</a>
+                <a class="nav-item" href="{{ url('exercise', {type: 3, id: 1}) }}">Exercise 3</a>
+
+                {% if user %}
+                    <a class="nav-item" href="{{ url('logout') }}">Déconnexion</a>
+                {% else %}
+                    <a class="nav-item" href="{{ url('login') }}">Connexion</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
