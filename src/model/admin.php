@@ -29,13 +29,4 @@ class Admin
 
             return true;
     }
-
-    public function result()
-    {   
-            $sql = '';
-            $stmt = $this->db->prepare($sql);
-            $stmt->execute();
-
-            return true;
-    }
 }

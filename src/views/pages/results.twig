@@ -1,0 +1,8 @@
+{% include 'partials/head.twig' %}
+{% include 'partials/nav.twig' %}
+
+		{% for answer in fill %}
+			<h1>Les réponses{{ answer.answer }}</h1>
+		{% endfor %}
+
+{% include 'partials/foot.twig' %}
