@@ -32,23 +32,30 @@
     <nav class="nav">
         <div class="nav__block nav__block--left">
             <div class="nav__blockItem nav__blockItem--logo">
-                <a href="{{app.request.basepath}}"  class="nav__linkHome">
-                    <img src="../www/assets/img/logo.svg" alt="Menu">
+            {% if user %}
+                <a href="{{url('hub')}}"  class="nav__linkHome">
+                    <img src="{{app.request.basepath}}/assets/img/logo.svg" alt="Menu">
                     <p>Plumi</p>
                 </a>
+            {% else %}
+                <a href="{{app.request.basepath}}"  class="nav__linkHome">
+                    <img src="{{app.request.basepath}}/assets/img/logo.svg" alt="Menu">
+                    <p>Plumi</p>
+                </a>
+            {% endif %}
             </div>
         </div>
 
         <div class="nav__block nav__block--right">
             <div class="nav__blockItem nav__blockItem--btn">
                 <a href="#">
-                    <div><img src="../www/assets/img/about.svg" alt="A propos"></div>
+                    <div><img src="{{app.request.basepath}}/assets/img/about.svg" alt="A propos"></div>
                 </a>
                 <a href="#">
-                    <div><img src="../www/assets/img/loudspeaker.svg" alt="Volume"></div>
+                    <div><img src="{{app.request.basepath}}/assets/img/loudspeaker.svg" alt="Volume"></div>
                 </a>
                 <a href="#">
-                    <div><img src="../www/assets/img/text-a.svg" alt="Taille de la police"></div>
+                    <div><img src="{{app.request.basepath}}/assets/img/text-a.svg" alt="Taille de la police"></div>
                 </a>
                 {% if user %}
                     <a class="nav-item" href="{{ url('logout') }}">Déconnexion</a>
