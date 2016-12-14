@@ -4,17 +4,6 @@
     <div class="hero-head">
         {% include 'partials/nav.twig' %}
     </div>
-
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <h1 class="title is-2">
-                Exercise
-            </h1>
-            <h2 class="subtitle is-4">
-                Subtitle
-            </h2>
-        </div>
-    </div>
 </section>
 
 {% if questions is not empty %}
@@ -46,7 +35,8 @@
                     {% elseif question.type == 3 %}
                         <div class="box box-3" style="display:none" data-answer="{{ question.text|e }}" data-audio="{{ question.text|e }}">
                             <h1>Dictée</h1>
-                            <p class="question-text">{{ question.text }}</p>
+                            <h2>Conseil : Une phrase commence par une majuscule et finit par un point.</h2>
+                            <p class="answer" style="display: none">{{ question.text|e }}</p>
                             <input type="text" name="{{loop.index}}[answer]" class="input-answer">
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
