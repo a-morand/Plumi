@@ -6,9 +6,9 @@ use \Silex\Application;
 use \Symfony\Component\HttpFoundation\Request;
 
 /**
- * Exercise page
+ * Exercice page
  */
-class Exercise
+class Exercice
 {
     private $config = [
         'title' => 'Exercice'
@@ -21,17 +21,17 @@ class Exercise
             return $app->redirect($app['url_generator']->generate('login'));
         }
 
-        $exercise = new \Model\Exercise($app['db']);
-        $questions = $exercise->get($type, $id);
+        $exercice = new \Model\Exercice($app['db']);
+        $questions = $exercice->get($type, $id);
 
-        return $app['twig']->render('pages/exercise.twig', $this->config + [
+        return $app['twig']->render('pages/exercice.twig', $this->config + [
             'questions' => $questions
         ]);
     }
 
     public function post(Request $request, Application $app)
     {
-        
+
         $user = $app['session']->get('user');
         if(!$user){
             return $app->redirect($app['url_generator']->generate('login'));
@@ -39,8 +39,8 @@ class Exercise
 
         $user_id = $user->id;
         $post = $request->request->all();
-        $exercise = new \Model\Exercise($app['db']);
-        $exercise->insert($user_id, $post);
+        $exercice = new \Model\Exercice($app['db']);
+        $exercice->insert($user_id, $post);
 
         return $app['twig']->render('pages/home.twig', $this->config);
     }

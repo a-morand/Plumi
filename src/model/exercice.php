@@ -5,7 +5,7 @@ namespace Model;
 /**
  * Home page, that matchs webroot
  */
-class Exercise
+class Exercice
 {
     private $db;
 

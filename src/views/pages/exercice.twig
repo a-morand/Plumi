@@ -7,10 +7,10 @@
 </section>
 
 {% if questions is not empty %}
-    <script>var exercise = true;</script>
+    <script>var exercice = true;</script>
     <section class="section">
         <div class="container">
-            <form method="POST" class="exercise">
+            <form method="POST" class="exercice">
                 {% for question in questions %}
                     <input type="hidden" name="{{loop.index}}[type_id]" value="{{question.type}}">
                     <input type="hidden" name="{{loop.index}}[question_id]" value="{{question.id}}">
