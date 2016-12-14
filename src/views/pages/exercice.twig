@@ -14,7 +14,6 @@
                 {% for question in questions %}
                     <input type="hidden" name="{{loop.index}}[type_id]" value="{{question.type}}">
                     <input type="hidden" name="{{loop.index}}[question_id]" value="{{question.id}}">
-                    <input type="hidden" name="{{loop.index}}[success]" value="0">
                     {% if question.type == 1 %}
                         <div class="box box-1" style="display:none" data-audio="{{ question.text|e }}" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
                             <h1>Complète le mot</h1>
@@ -25,12 +24,11 @@
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
                     {% elseif question.type == 2 %}
-                        <div class="box box-2" style="display:none" data-proposals='{{ question.proposals|e }}' data-answer='{{ question.answer|e }}'>
+                        <div class="box box-2" style="display:none" data-proposals='{{ question.proposals|e }}' data-answer='{{ question.answer|e }}' data-tips='{{ question.tips|e }}'>
                             <h1>Trouve le bon mot</h1>
-                            <p class="question-proposals">{{ question.proposals }}</p>
-                            <p class="question-tips">{{ question.tips }}</p>
-                            <div class="button-cave">
-                            </div>
+                            <div class="question-tips"></div>
+                            <div class="button-cave"></div>
+                            <input type="hidden" name="{{loop.index}}[answer]" class="input-answer">
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
                     {% elseif question.type == 3 %}
@@ -42,6 +40,7 @@
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
                     {% endif %}
+                        <input type="hidden" class="input-is-success" name="{{loop.index}}[success]" value="0">
                         <button class="button button-validate is-primary" type="button">Valider</button>
                         <button class="button button-next is-primary" style="display:none" type="button">Question suivante</button>
                         <button class="button button-sound is-primary" type="button">Son</button>

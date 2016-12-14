@@ -16,6 +16,8 @@ $app->post('/login', 'Controller\\Login::post');
 $app->get('/admin', 'Controller\\Admin::get')->bind('admin');
 $app->post('/admin', 'Controller\\Admin::post');
 
+$app->get('/results/{fill}', 'Controller\\Result::get');
+
 $app->get('/logout', 'Controller\\Logout::get')->bind('logout');
 
 

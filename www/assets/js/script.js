@@ -32,36 +32,55 @@ $( document ).ready(function() {
 			}
 		})
 
-		var proposals = $('.box.box-2').data('proposals');
-		var button = '';
-		$('.button-cave').parent('.box-2')
-			for(var i = 0, l = proposals.length; i < l; i++) {
-				button += '<button class="button-proposals-success" type="button">'+proposals[i]+'</button>';
+		$('.box.box-2').each(function (index, element) {
+			var $box = $(element);
+			var proposals = $box.data('proposals');
+			var tips = $box.data('tips');
+
+			var buttonCave = $box.find('.button-cave')
+
+			for(var i = 0; i < proposals.length; i++) {
+				var button = $('<button></button>')
+								.addClass('button-proposals-success')
+								.data('answer', proposals[i])
+								.attr('type', 'button')
+								.text(proposals[i]);
+				buttonCave.append(button);
 			}
 
-		$('.button-cave').append($(button));
+			var $questionTips = $box.find('.question-tips');
 
-		$('.box.box-2').find('.button-proposals-success').on('click', function(e){
-			$(this).addClass('test');
-			var checkedAnswer = $('.test').text();
-			var rightAnswer = $('.box.box-2').data('answer');
-			if (String(checkedAnswer) === String(rightAnswer)){
-				console.log('Bonne réponse');
-				$('.exercice').find('.success').show();
-				$('.exercice').find('.button-validate').hide();
-				$('.exercice').find('.button-next').show();
-				$('.exercice').find('.test').css({"background-color":"green"});
-				$(this).removeClass('test');
-				$('.button-proposals-success').unbind();
-			} else {
-				console.log('Mauvaise réponse');
-				$('.exercice').find('.fail').show();
-				$('.exercice').find('.button-validate').hide();
-				$('.exercice').find('.button-next').show();
-				$('.exercice').find('.test').css({"background-color":"red"});
-				$(this).removeClass('test');
-				$('.button-proposals-success').unbind();
+			for(var i = 0; i < tips.length; i++) {
+				$questionTips.append($('<p></p>').text(tips[i]));
 			}
+
+			$box.find('.button-proposals-success').on('click', function(e){
+				var $box = $(this).closest('.box')
+				var inputAnswer = $(this).data('answer');
+				var rightAnswer = $box.data('answer');
+				$box.find('.input-answer').val(inputAnswer);
+				if (inputAnswer === rightAnswer){
+					console.log('Bonne réponse');
+					$box.find('.success').show();
+					$box.find('.button-validate').hide();
+					$box.find('.button-next').show();
+					$(this).css({"background-color":"green"});
+					$(this).removeClass('test');
+					$box.find('.input-is-success').val(1)
+					$box.find('.button-proposals-success').unbind();
+				} else {
+					console.log('Mauvaise réponse');
+					$box.find('.fail').show();
+					$box.find('.button-validate').hide();
+					$box.find('.button-next').show();
+					$(this).css({"background-color":"red"});
+					$(this).removeClass('test');
+					$box.find('.button-proposals-success').unbind();
+					console.log(rightAnswer);
+
+				}
+			})
+
 		})
 
 	}
