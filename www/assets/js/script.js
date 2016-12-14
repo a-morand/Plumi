@@ -21,12 +21,14 @@ $( document ).ready(function() {
 		})
 
 		$('.exercice').find('.button-validate').on('click', function(e){
+			var $box = $(this).closest('.box');
 			$(this).parent('.box').find('.button-validate').hide();
 			$(this).parent('.box').find('.button-next').show();
 			$(this).parent('.box').find('.answer').show();
 			if($(this).parent('.box').find('.input-answer').val() == $(this).parent('.box').data('answer'))
 			{
 				$(this).parent('.box').find('.success').show();
+				$box.find('.input-is-success').val(1);
 			} else {
 				$(this).parent('.box').find('.fail').show();
 			}
