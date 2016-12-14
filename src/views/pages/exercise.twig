@@ -36,10 +36,12 @@
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
                     {% elseif question.type == 2 %}
-                        <div class="box box-2" style="display:none" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
+                        <div class="box box-2" style="display:none" data-proposals='{{ question.proposals|e }}' data-answer='{{ question.answer|e }}'>
                             <h1>Trouve le bon mot</h1>
                             <p class="question-proposals">{{ question.proposals }}</p>
                             <p class="question-tips">{{ question.tips }}</p>
+                            <div class="button-cave">
+                            </div>
                             <input type="text" name="{{loop.index}}[answer]" class="input-answer">
                     {% elseif question.type == 3 %}
                         <div class="box box-3" style="display:none" data-answer="{{ question.text|e }}" data-audio="{{ question.text|e }}">
