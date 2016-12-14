@@ -45,21 +45,25 @@ $( document ).ready(function() {
 			$(this).addClass('test');
 			var checkedAnswer = $('.test').text();
 			var rightAnswer = $('.box.box-2').data('answer');
-
 			if (String(checkedAnswer) === String(rightAnswer)){
 				console.log('Bonne réponse');
+				$('.exercise').find('.success').show();
+				$('.exercise').find('.button-validate').hide();
+				$('.exercise').find('.button-next').show();
+				$('.exercise').find('.test').css({"background-color":"green"});
 				$(this).removeClass('test');
+				$('.button-proposals-success').unbind();
 			} else {
 				console.log('Mauvaise réponse');
+				$('.exercise').find('.fail').show();
+				$('.exercise').find('.button-validate').hide();
+				$('.exercise').find('.button-next').show();
+				$('.exercise').find('.test').css({"background-color":"red"});
 				$(this).removeClass('test');
+				$('.button-proposals-success').unbind();
 			}
-		
-		// console.log($('.box.box-2').find('test').data('answer'));
-		// console.log($('.box.box-2').data('proposals'));
-		// console.log($('.box.box-2').data('answer'));
 		})
 		
-		// $(this).parent('.box-2').find('.button-proposals-success').css({"background-color":"red"});
 	}
 
 });
