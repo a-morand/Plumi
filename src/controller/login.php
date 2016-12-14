@@ -33,7 +33,7 @@ class Login
         }
 
         return $app['twig']->render('pages/login.twig', $this->config + [
-            'message' => 'Mauvais user/pwd',
+            'message' => 'Mauvais nom d\'utilisateur ou mot de passe',
         ]);
     }
 }
