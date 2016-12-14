@@ -4,27 +4,31 @@
     <div class="hero-head">
         {% include 'partials/nav.twig' %}
     </div>
+</section>
+    <div class="page">
+        <div class="page-container page__login">
+            <div class="page__container--text">
+                <h1  class="page__login--title"><span>Connectez-vous</span></h1>
+            </div>
 
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <h1 class="title is-2">
-                Exercise
-            </h1>
-            <h2 class="subtitle is-4">
-                Subtitle
-            </h2>
+            <form action="#" method="POST" class="form-control page__login--form">
+                <div>
+                    <label for="username">Identifiant</label>
+                    <input type="text" name="username" placeholder="JacquesBoulangers1829">
+                </div>
+                <div>
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" placeholder="•••••••••">
+                </div>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
         </div>
     </div>
-</section>
 
 {% if message is defined %}
     <h1>{{message}}</h1>
 {% endif %}
-
-<form method="POST">
-    <input type="text" name="username">
-    <input type="password" name="password">
-    <button type="submit">Login</button>
-</form>
 
 {% include 'partials/foot.twig' %}

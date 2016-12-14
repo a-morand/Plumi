@@ -1,4 +1,5 @@
 
+    {#
     <nav class="nav">
         <div class="container">
             <div class="nav-left">
@@ -18,6 +19,37 @@
                 <a class="nav-item" href="{{ url('exercise', {type: 2, id: 1}) }}">Exercice 2</a>
                 <a class="nav-item" href="{{ url('exercise', {type: 3, id: 1}) }}">Exercice 3</a>
 
+                {% if user %}
+                    <a class="nav-item" href="{{ url('logout') }}">Déconnexion</a>
+                {% else %}
+                    <a class="nav-item" href="{{ url('login') }}">Connexion</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    #}
+
+    <nav class="nav">
+        <div class="nav__block nav__block--left">
+            <div class="nav__blockItem nav__blockItem--logo">
+                <a href="{{app.request.basepath}}"  class="nav__linkHome">
+                    <img src="../www/assets/img/logo.svg" alt="Menu">
+                    <p>Plumi</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav__block nav__block--right">
+            <div class="nav__blockItem nav__blockItem--btn">
+                <a href="#">
+                    <div><img src="../www/assets/img/about.svg" alt="A propos"></div>
+                </a>
+                <a href="#">
+                    <div><img src="../www/assets/img/loudspeaker.svg" alt="Volume"></div>
+                </a>
+                <a href="#">
+                    <div><img src="../www/assets/img/text-a.svg" alt="Taille de la police"></div>
+                </a>
                 {% if user %}
                     <a class="nav-item" href="{{ url('logout') }}">Déconnexion</a>
                 {% else %}

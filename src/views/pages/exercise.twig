@@ -42,10 +42,12 @@
                             <p class="question-tips">{{ question.tips }}</p>
                             <input type="text" name="{{loop.index}}[answer]" class="input-answer">
                     {% elseif question.type == 3 %}
-                        <div class="box box-3" style="display:none" data-answer="{{ question.text|e }}">
+                        <div class="box box-3" style="display:none" data-answer="{{ question.text|e }}" data-audio="{{ question.text|e }}">
                             <h1>Dictée</h1>
                             <p class="question-text">{{ question.text }}</p>
                             <input type="text" name="{{loop.index}}[answer]" class="input-answer">
+                            <p class="success" style="display: none">Félicitations</p>
+                            <p class="fail" style="display: none">Mauvaise réponse</p>
                     {% endif %}
                         <button class="button button-validate is-primary" type="button">Valider</button>
                         <button class="button button-next is-primary" style="display:none" type="button">Question suivante</button>

@@ -2,7 +2,22 @@
 <div class="hero-head">
         {% include 'partials/nav.twig' %}
 </div>
-<h1>PLUMI</h1>
-<a class="button is-success" href="{{ url('login') }}">Login</a>
-<a href="{{ url('admin') }}">Se connecter en tant qu'administrateur</a>
+<div class="page">
+    <div class="page__container">
+        <div class="page__container--text">
+            <h1><span>Bienvenue sur Plumi</span></h1>
+            <div class="text">
+                <p>Plumi est un jeu qui va te permettre d'écrire en t'amusant ! <strong>Connecte-toi</strong> pour commencer à jouer !</p>
+            </div>
+        </div>
+
+        <div class="page__container--btn">
+            <a href="{{ url('login') }}">Connexion</a>
+        </div>
+
+        <div class="page__container--space">
+            <a href="{{ url('admin') }}">Espace orthophoniste</a>
+        </div>
+    </div>
+</div>
 {% include 'partials/foot.twig' %}
