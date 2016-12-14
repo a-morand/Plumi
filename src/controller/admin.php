@@ -25,11 +25,13 @@ class Admin
 
         $username = $post['username'];
         $password = $post['password'];
+        $first_name = $post['first_name'];
+        $last_name = $post['last_name'];
 
         $user = new \Model\Admin($app['db'], $app['session']);
 
-        if ($user->signup($username, $password)) {
-            return $app->redirect($app['url_generator']->generate('home'));
+        if ($user->signup($username, $password, $first_name, $last_name)) {
+            return $app->redirect($app['url_generator']->generate('admin'));
         } else {
             return $app['twig']->render('pages/admin.twig', $this->config);
         }
