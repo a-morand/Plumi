@@ -1,7 +1,12 @@
 $( document ).ready(function() {
 
 	$('.nav').find('.universal-font-size').on('click', function(e){
+		$(this).addClass('clicked-resize');
 		$('body').css('zoom', "120%");
+		if ($('.nav').find('.clicked-resize').on('click', function(e){
+			$(this).removeClass('.clicked-resize');
+			$('body').css('zoom', "100%");
+		}));
 	})
 
 	if(typeof exercice !== 'undefined' && exercice === true)
