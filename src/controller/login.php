@@ -29,11 +29,17 @@ class Login
         $user = new \Model\User($app['db'], $app['session']);
 
         if ($user->login($username, $password)) {
-            return $app->redirect($app['url_generator']->generate('hub'));
+            // il est connecté
+            $data = $app['session']->get('user');
+            if ($data->status >= 2) {
+                return $app->redirect($app['url_generator']->generate('admin'));
+            } else {
+                return $app->redirect($app['url_generator']->generate('hub'));
+            }
+        } else {
+            return $app['twig']->render('pages/login.twig', $this->config + [
+                'message' => 'Mauvais nom d\'utilisateur ou mot de passe',
+            ]);
         }
-
-        return $app['twig']->render('pages/login.twig', $this->config + [
-            'message' => 'Mauvais nom d\'utilisateur ou mot de passe',
-        ]);
     }
 }

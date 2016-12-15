@@ -1,18 +1,47 @@
 {% include 'partials/head.twig' %}
-    <form action="#" method="POST">
-    <div>        
-        <input type="text" name="username" placeholder="Username">
-    </div>
-    <div>
-        <input type="password" name="password" placeholder="Password">
-    </div>
-    <div>
-        <input type="text" name="first_name" placeholder="Votre prénom">
-    </div>
-    <div>
-        <input type="text" name="last_name" placeholder="Votre nom">
-    </div>
 
-    <input type="submit">
-    </form>
+<section class="hero is-info is-bold">
+    <div class="hero-head">
+        {% include 'partials/nav.twig' %}
+    </div>
+</section>
+
+<div class="page">
+    <div class="page__container">
+        <h1 class="page__container--title">Bienvenue !</h1>
+        <div class="page__container--patientListe">
+            <div class="page__container--id">
+                <h2>Alex Richard</h2>
+                <a href=""><p>Voir la fiche de suivi</p></a>
+            </div>
+            <div class="page__container--id">
+                <h2>Damien Loud</h2>
+                <a href=""><p>Voir la fiche de suivi</p></a>
+            </div>
+            <div class="page__container--id">
+                <h2>Alice Lemaire</h2>
+                <a href=""><p>Voir la fiche de suivi</p></a>
+            </div>
+            <div class="page__container--id">
+                <h2>Fabien Lendemaine</h2>
+                <a href=""><p>Voir la fiche de suivi</p></a>
+            </div>
+        </div>
+        <form action="#" method="POST">
+            <div>
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <div>
+                <input type="text" name="first_name" placeholder="Votre prénom">
+            </div>
+            <div>
+                <input type="text" name="last_name" placeholder="Votre nom">
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</div>
 {% include 'partials/foot.twig' %}
