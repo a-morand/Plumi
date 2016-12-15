@@ -26,10 +26,10 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array (
         'driver'    => 'pdo_mysql',
-        'host'      => 'localhost',
-        'dbname'    => 'plumi',
-        'user'      => 'root',
-        'password'  => 'root',
+        'host'      => '91.216.107.248',
+        'dbname'    => 'leaba678279',
+        'user'      => 'leaba678279',
+        'password'  => '0lmnzqqvug',
         'charset'   => 'utf8'
     ),
 ));
