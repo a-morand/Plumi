@@ -1,5 +1,9 @@
 $( document ).ready(function() {
 
+	$('.nav').find('.universal-font-size').on('click', function(e){
+		$('body').css('zoom', "120%");
+	})
+
 	if(typeof exercice !== 'undefined' && exercice === true)
 	{
 
