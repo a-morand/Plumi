@@ -21,7 +21,7 @@
                             <p class="answer" style="display: none">{{ question.text|e }}</p>
                             <div class="proposals"></div>
                             <div class="page__container--blockRep">
-                                <input type="text" name="{{loop.index}}[answer]" class="input-answer">
+                                <input type="text" spellcheck ="false" name="{{loop.index}}[answer]" class="input-answer">
                             </div>
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
@@ -51,7 +51,7 @@
                             <h2>Conseil : Une phrase commence par une majuscule et finit par un point.</h2>
                             <p class="answer" style="display: none">{{ question.text|e }}</p>
                             <div class="page__container--blockRep">
-                                <input type="text" name="{{loop.index}}[answer]" class="input-answer">
+                                <input type="text" spellcheck ="false" name="{{loop.index}}[answer]" class="input-answer">
                             </div>
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
