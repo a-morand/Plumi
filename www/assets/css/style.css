@@ -339,5 +339,108 @@ form.form-control.page__login--form div input[type="submit"] {
     }
 }
 
-/*Hub*/
+/* Exercice 1 */
+div.page__container h1.page__container--title {
+  font-family: Museo;
+  font-size: 30px;
+  color: #74b4f9;
+  margin: 0px 0px 60px 0px;
+}
+div.page__container button.button.button-sound.is-primary img {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+div.page__container button.button.button-sound.is-primary {
+  margin-right: 20px;
+  background-color: #74b4f9;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+div.page__container p.question-input {
+  font-family: Museo;
+  font-size: 20px;
+  color: black;
+}
+div.page__container p.question-input, div.page__container div.page__container--loudspeaker {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+div.page__container div.page__container--blockRep input {
+  margin-bottom: 90px;
+  border: none;
+  border-bottom: 2px solid #e2f3f4;
+  box-shadow: none;
+  font-size: 16px;
+  height: 30px;
+}
+@media screen and (max-width: 599px) {
+  .page__container {
+    max-width: 300px;
+    margin: 50px auto;
+  }
+  div.page__container h1.page__container--title {
+    font-size: 22px;
+    color: #74b4f9;
+    margin: 0px 0px 50px 0px;
+  }
+}
 
+/* Exercice 3 */
+div.page__container--choices {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 0px auto 50px auto;
+  max-width: 60%;
+  width: 60%;
+}
+div.page__container--choices button.page__container--list {
+  background-color: #f3f3f3;
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+div.page__container--choices button.page__container--list:hover {
+  background-color: #e9e9e9;
+}
+div.page__container--choices button.page__container--list:active {
+  background-color: #74b4f9;
+}
+div.page__container--choices button.page__container--list p {
+  margin-bottom: 0px;
+  font-size: 12px;
+  font-family: Museo;
+  color: #9d9d9d;
+}
+div.page__container--choices button.page__container--list p:active {
+  color: white;
+}
+div.page__container--indices {
+  margin-bottom: 90px;
+}
+div.page__container--indices div p {
+  font-size: 14px;
+  font-family: Museo;
+}
+div.page__container--indices div p span {
+  color: #74b4f9;
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  div.page__container--choices {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 599px) {
+  div.page__container--choices button.page__container--list {
+    margin-bottom: 5px;
+  }
+}

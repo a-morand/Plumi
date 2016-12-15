@@ -43,7 +43,7 @@ $( document ).ready(function() {
 
 			for(var i = 0; i < proposals.length; i++) {
 				var button = $('<button></button>')
-								.addClass('button-proposals-success')
+								.addClass('button-proposals-success page__container--list')
 								.data('answer', proposals[i])
 								.attr('type', 'button')
 								.text(proposals[i]);
