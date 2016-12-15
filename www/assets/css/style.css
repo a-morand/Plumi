@@ -7,14 +7,6 @@ body {
   padding: 0;
 }
 
-input, textarea {
-  -webkit-user-select: text;
-  -khtml-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-}
-
 /* Font */
 @font-face {
   font-family: 'Museo';
