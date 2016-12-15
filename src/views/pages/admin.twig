@@ -6,6 +6,12 @@
     </div>
 </section>
 
+        {% for user in users %}
+            <h1>Question: {{ user.username }}</h1>
+            <h1>Réponse: {{ user.first_name }}</h1>
+            <h1>Réponse: {{ user.last_name }}</h1>
+        {% endfor %}
+
 <div class="page">
     <div class="page__container">
         <h1 class="page__container--title">Bienvenue !</h1>

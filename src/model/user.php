@@ -34,4 +34,12 @@ class User
 
         return false;
     }
+
+    public function getAll()
+    {
+        $sql = 'SELECT * FROM users';
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

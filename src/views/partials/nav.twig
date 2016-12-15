@@ -53,8 +53,8 @@
                 <!-- <a href="#">
                     <div><img src="{#{app.request.basepath}#}/assets/img/loudspeaker.svg" alt="Volume"></div>
                 </a> -->
-                <a href="#">
-                    <div class="universal-font-size"><img src="{{app.request.basepath}}/assets/img/text-a.svg" alt="Taille de la police"></div>
+                <a href="#" class="universal-font-size">
+                    <div><img src="{{app.request.basepath}}/assets/img/text-a.svg" alt="Taille de la police"></div>
                 </a>
                 {% if user %}
                     <a class="nav-item" href="{{ url('logout') }}">Déconnexion</a>
@@ -63,6 +63,4 @@
                 {% endif %}
             </div>
         </div>
-        <script src="{{app.request.basepath}}/assets/vendor/jquery/jquery.min.js"></script>
-        <script src="{{app.request.basepath}}/assets/js/script.js"></script>
     </nav>

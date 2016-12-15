@@ -1,13 +1,16 @@
 $( document ).ready(function() {
-
 	$('.nav').find('.universal-font-size').on('click', function(e){
-		$(this).addClass('clicked-resize');
-		$('body').css('zoom', "120%");
-		if ($('.nav').find('.clicked-resize').on('click', function(e){
-			$(this).removeClass('.clicked-resize');
+		$(this).toggleClass('clicked-resize');
+		console.log('doria');
+		if ($(this).hasClass('clicked-resize')) {
+			console.log('tata');
+			$('body').css('zoom', "120%");
+		} else {
+			console.log('toto');
 			$('body').css('zoom', "100%");
-		}));
+		}
 	})
+	console.log('poiuyg');
 
 	if(typeof exercice !== 'undefined' && exercice === true)
 	{

@@ -2,7 +2,8 @@
 {% include 'partials/nav.twig' %}
 
 		{% for answer in fill %}
-			<h1>Les réponses{{ answer.answer }}</h1>
+			<h1>Question: {{ answer.question.text }}</h1>
+			<h1>Réponse: {{ answer.answer }}</h1>
 		{% endfor %}
 
 {% include 'partials/foot.twig' %}
