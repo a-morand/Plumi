@@ -1,9 +1,14 @@
 {% include 'partials/head.twig' %}
 {% include 'partials/nav.twig' %}
 
-		{% for answer in fill %}
-			<h1>Question: {{ answer.question.text }}</h1>
-			<h1>Réponse: {{ answer.answer }}</h1>
-		{% endfor %}
-
+{% for answer in fill %}		
+		<h1>Question: {{ answer.question.id }}</h1>
+		<h1>Réponse: {{ answer.answer }}</h1>
+		{% if answer.success == 1 %}
+			<p>Réponse juste</p>
+		{% else %}
+			<p>Réponse fausse</p>
+		{% endif %}
+{% endfor %}
+	
 {% include 'partials/foot.twig' %}

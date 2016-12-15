@@ -1,21 +1,18 @@
 {% include 'partials/head.twig' %}
-
-<section class="hero is-info is-bold">
-    <div class="hero-head">
-        {% include 'partials/nav.twig' %}
-    </div>
-</section>
+{% include 'partials/nav.twig' %}
 
 <div class="page">
     <div class="page__container">
         <h1 class="page__container--title">Bienvenue !</h1>
         <div class="page__container--patientListe">
             {% for user in users %}
+                {% if user.status < 2 %}
                 <div class="page__container--id">
                     <h2>{{ user.first_name }}</h2>
                     <h2>{{ user.last_name }}</h2>
-                    <a href=""><p>Voir la fiche de suivi</p></a>
+                    <a href="{{ url('results', {fill: user.id }) }}"><p>Voir la fiche de suivi</p></a>
                 </div>
+                {% endif %}
             {% endfor %}
         </div>
 
