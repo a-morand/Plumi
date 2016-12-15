@@ -6,33 +6,19 @@
     </div>
 </section>
 
-        {% for user in users %}
-            <h1>Question: {{ user.username }}</h1>
-            <h1>Réponse: {{ user.first_name }}</h1>
-            <h1>Réponse: {{ user.last_name }}</h1>
-        {% endfor %}
-
 <div class="page">
     <div class="page__container">
         <h1 class="page__container--title">Bienvenue !</h1>
         <div class="page__container--patientListe">
-            <div class="page__container--id">
-                <h2>Alex Richard</h2>
-                <a href=""><p>Voir la fiche de suivi</p></a>
-            </div>
-            <div class="page__container--id">
-                <h2>Damien Loud</h2>
-                <a href=""><p>Voir la fiche de suivi</p></a>
-            </div>
-            <div class="page__container--id">
-                <h2>Alice Lemaire</h2>
-                <a href=""><p>Voir la fiche de suivi</p></a>
-            </div>
-            <div class="page__container--id">
-                <h2>Fabien Lendemaine</h2>
-                <a href=""><p>Voir la fiche de suivi</p></a>
-            </div>
+            {% for user in users %}
+                <div class="page__container--id">
+                    <h2>{{ user.first_name }}</h2>
+                    <h2>{{ user.last_name }}</h2>
+                    <a href=""><p>Voir la fiche de suivi</p></a>
+                </div>
+            {% endfor %}
         </div>
+
         <form action="#" method="POST">
             <div>
                 <input type="text" name="username" placeholder="Username">
