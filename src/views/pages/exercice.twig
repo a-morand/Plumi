@@ -16,7 +16,7 @@
                     <input type="hidden" name="{{loop.index}}[question_id]" value="{{question.id}}">
                     {% if question.type == 1 %}
                         <div class="box box-1" style="display:none" data-audio="{{ question.text|e }}" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
-                            <h1 class="page__container--title">Écoute attentivement et réécris le mot avec les lettres manquantes!</h1>
+                            <h1 class="page__container--title">Écoute attentivement et réécris le mot avec les lettres manquantes !</h1>
                             <p class="question-input">{{ question.input }}</p>
                             <p class="answer" style="display: none">{{ question.text|e }}</p>
                             <div class="proposals"></div>
