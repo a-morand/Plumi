@@ -26,6 +26,13 @@ body {
   font-weight: normal;
   font-style: normal;
  }
+ @font-face {
+  font-family: 'Gill';
+  src: url("../fonts/GillSans.ttf");
+  font-weight: normal;
+  font-style: normal;
+ }
+
 
 
 /* Menu */
@@ -71,7 +78,7 @@ div.nav__blockItem.nav__blockItem--logo p {
   vertical-align: top;
   margin: 15px 0px 0px 10px;
   font-family: 'Museo';
-  color: #97acd5;
+  color: #74b4f9;
   font-size: 16px;
 }
 div.nav__blockItem.nav__blockItem--logo img, div.nav__blockItem.nav__blockItem--logo div, div.nav__blockItem.nav__blockItem--btn a {
@@ -85,6 +92,7 @@ div.nav__blockItem.nav__blockItem--btn a {
   border-radius: 50px;
   margin-left: 25px;
   text-decoration: none;
+  color: #979797;
 }
 div.nav__blockItem.nav__blockItem--btn a div {
   color: #8c8c8c;
@@ -196,23 +204,14 @@ div.nav__blockItem.nav__blockItem--btn div img {
   text-align: center;
 }
 div.page__container--text h1, div.page__container--text div p {
-  color: #97acd5;
+  color: #74b4f9;
 }
 div.page__container--text h1 {
   position: relative;
   margin-top: 0px;
 }
-div.page__container--text h1:before {
-    content: "";
-    width: 100%;
-    height: 10px;
-    background-color: #e2f3f3;
-    position: absolute;
-    bottom: 4px;
-    z-index: 1;
- }
 div.page__container--text h1 span {
-  font-family: 'Playfair Display';
+  font-family: 'Gill';
   font-size: 50px;
   font-weight: 400;
   position: relative;
@@ -232,7 +231,7 @@ div.page__container--btn {
 }
 div.page__container--btn a, div.page-container.page__login form div input.page__container--btn {
   color: white;
-  background-color: #97acd5;
+  background-color: #74b4f9;
   padding: 15px 90px;
   border-radius: 50px;
   text-decoration: none;
@@ -242,7 +241,7 @@ div.page__container--btn a, div.page-container.page__login form div input.page__
   text-align: center;
 }
 div.page__container--btn a:hover, div.page-container.page__login form div input.page__container--btn:hover {
-  background-color: #849cca;
+  background-color: #62a3e8;
 }
 div.page__container--space a {
   color: #dadada;
@@ -315,11 +314,11 @@ form.form-control.page__login--form div input[type="text"], form.form-control.pa
   font-style: italic;
   font-size: 16px;
 }
-form.form-control.page__login--form div input[type="submit"] {
+form.form-control.page__login--form div input[type="submit"], .buttonAjout, div.page__container div input[type="submit"] {
   margin: 0px auto;
   display: block;
   color: white;
-  background-color: #97acd5;
+  background-color: #74b4f9;
   padding: 15px 90px;
   border-radius: 50px;
   text-decoration: none;
@@ -327,6 +326,9 @@ form.form-control.page__login--form div input[type="submit"] {
   font-size: 16px;
   border: none;
   text-align: center;
+}
+form.form-control.page__login--form div input[type="submit"]:hover, .buttonAjout:hover, div.page__container div input[type="submit"]:hover {
+  background-color: #65a7ee;
 }
 @media screen and (max-width: 599px) {
   div.page-container.page__login  {
@@ -338,32 +340,31 @@ form.form-control.page__login--form div input[type="submit"] {
     }
 }
 
+
 /* Exercice 1 */
-div.page__container h1.page__container--title {
+div.page__container h1.page__container--title, div.page__containerOrtho h1.page__container--title {
   font-family: Museo;
   font-size: 30px;
   color: #74b4f9;
   margin: 0px 0px 60px 0px;
-}
-div.page__container button.button.button-sound.is-primary img {
-  width: 20px;
-  height: 20px;
-  margin-top: 1px;
-  margin-left: 1px;
+  text-align: center;
 }
 div.page__container button.button.button-sound.is-primary {
-  margin-right: 20px;
-  background-color: #74b4f9;
   border: none;
+  background-color: #74b4f9;
   padding: 10px;
   border-radius: 50px;
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
+  margin-right: 30px;
+}
+div.page__container button.button.button-sound.is-primary img {
+  width: 22px;
+  height: 17px;
+  margin-top: 3px;
+  margin-left: 3px;
 }
 div.page__container p.question-input {
   font-family: Museo;
-  font-size: 20px;
+  font-size: 22px;
   color: black;
 }
 div.page__container p.question-input, div.page__container div.page__container--loudspeaker {
@@ -377,6 +378,21 @@ div.page__container div.page__container--blockRep input {
   box-shadow: none;
   font-size: 16px;
   height: 30px;
+  font-style: italic;
+}
+button.button-validate.is-primary, button.button.button-next.is-primary {
+  color: white;
+  background-color: #74b4f9;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 75px;
+  font-family: Museo;
+  font-size: 16px;
+  margin: 0px auto 50px auto;
+  display: block;
+}
+p.success {
+  color: #7fce7f;
 }
 @media screen and (max-width: 599px) {
   .page__container {
@@ -441,5 +457,122 @@ div.page__container--indices div p span {
 @media screen and (max-width: 599px) {
   div.page__container--choices button.page__container--list {
     margin-bottom: 5px;
+  }
+}
+
+/* admin */
+div.page__container--patientListe div.page__container--id {
+  display: flex;
+}
+div.page__containerOrtho {
+  width: 100%;
+}
+div.page__containerOrtho h1.page__container--title {
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 40px;
+  width: 80%;
+  margin: 0px auto 50px;
+}
+div.page__containerOrtho div.containerOrtho__left, div.page__container div.containerOrtho__right {
+  width: 50%;
+}
+div.page__container--patientListe div.page__container--id img {
+  width: 20px;
+  height: 20px;
+}
+div.page__container--patientListe div.page__container--id a {
+  color: #74b4f9;
+}
+div.container__ortho {
+  display: flex;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page__container--patientListe {
+  width: 50%;
+  margin: 0px auto;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right {
+  width: 50%;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__left form {
+  width: 50%;
+  margin: 0px auto;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__left form div input {
+  width: 100%;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right h2, div.page__containerOrtho div.container__ortho div.containerOrtho__left h2 {
+  font-size: 20px;
+  color: #74b4f9;
+  text-align: center;
+  margin-bottom: 30px;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__left form div label {
+  font-size : 14px;
+  color: #74b4f9;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__left form div {
+  margin-bottom: 15px;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__left form div input {
+  background-color: #f5f5f5;
+  padding: 20px 20px;
+  border: none;
+  box-shadow: none;
+  border-radius: 50px;
+  color: #ababab;
+  font-weight: 500;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__left form input.submit-ortho {
+  color: white;
+  background-color: #74b4f9;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 60px;
+  font-family: Museo;
+  font-size: 14px;
+  margin: 0px auto 50px auto;
+  display: block;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page__container--patientListe div.page__container--id {
+  background-color: #f5f5f5;
+  padding: 15px 30px;
+  margin-bottom: 15px;
+  border-radius: 50px;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page__container--patientListe div.page__container--id h3 {
+  color: #74b4f9;
+  font-size:14px;
+  font-weight: 500;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page__container--patientListe div.page__container--id h3:nth-child(1) {
+  margin-right: 8px;
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page__container--patientListe div.page__container--id a {
+
+}
+div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page__container--patientListe div.page__container--id a img {
+  width: 25px;
+  height: 25px;
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  div.container__ortho {
+    display: block;
+  }
+  div.page__containerOrtho div.container__ortho div.containerOrtho__right {
+    width: 100%;
+  }
+  div.page__containerOrtho div.container__ortho div.containerOrtho__left {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 599px) {
+  div.container__ortho {
+    display: block;
+  }
+  div.page__containerOrtho div.container__ortho div.containerOrtho__right {
+    width: 100%;
+  }
+  div.page__containerOrtho div.container__ortho div.containerOrtho__left {
+    width: 100%;
   }
 }

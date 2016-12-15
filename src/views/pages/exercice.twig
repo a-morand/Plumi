@@ -17,20 +17,20 @@
                     {% if question.type == 1 %}
                         <div class="box box-1" style="display:none" data-audio="{{ question.text|e }}" data-proposals="{{ question.proposals|e }}" data-answer="{{ question.answer|e }}">
                             <h1 class="page__container--title">Écoute attentivement et réécris le mot avec les lettres manquantes !</h1>
+                             <button class="button button-sound is-primary" type="button">
+                                <img src="/Plumi/www/assets/img/loudspeaker2.svg" alt="" class="loudspeaker">
+                            </button>
                             <p class="question-input">{{ question.input }}</p>
                             <p class="answer" style="display: none">{{ question.text|e }}</p>
                             <div class="proposals"></div>
                             <div class="page__container--blockRep">
-                                <input type="text" spellcheck ="false" name="{{loop.index}}[answer]" class="input-answer">
+                                <input type="text" spellcheck ="false" name="{{loop.index}}[answer]" class="input-answer" placeholder="Ecris ta réponse ici !">
                             </div>
                             <p class="success" style="display: none">Félicitations</p>
                             <p class="fail" style="display: none">Mauvaise réponse</p>
                             <input type="hidden" class="input-is-success" name="{{loop.index}}[success]" value="0">
                             <button class="button button-validate is-primary" type="button">Valider</button>
                             <button class="button button-next is-primary" style="display:none" type="button">Question suivante</button>
-                            <button class="button button-sound is-primary" type="button">
-                                <img src="img/loudspeaker2.svg" alt="">
-                            </button>
                     {% elseif question.type == 2 %}
                         <div class="box box-2" style="display:none" data-proposals='{{ question.proposals|e }}' data-answer='{{ question.answer|e }}' data-tips='{{ question.tips|e }}'>
                             <h1 class="page__container--title">Trouve le bon mot</h1>
@@ -42,9 +42,6 @@
                             <input type="hidden" class="input-is-success" name="{{loop.index}}[success]" value="0">
                             <button class="button button-validate is-primary" type="button">Valider</button>
                             <button class="button button-next is-primary" style="display:none" type="button">Question suivante</button>
-                            <button class="button button-sound is-primary" type="button">
-                                <img src="img/loudspeaker2.svg" alt="">
-                            </button>
                     {% elseif question.type == 3 %}
                         <div class="box box-3" style="display:none" data-answer="{{ question.text|e }}" data-audio="{{ question.text|e }}">
                             <h1 class="page__container--title">Dictée</h1>
@@ -59,7 +56,7 @@
                             <button class="button button-validate is-primary" type="button">Valider</button>
                             <button class="button button-next is-primary" style="display:none" type="button">Question suivante</button>
                             <button class="button button-sound is-primary" type="button">
-                                <img src="img/loudspeaker2.svg" alt="">
+                                <img src="/Plumi/www/assets/img/loudspeaker2.svg" alt="">
                             </button>
                     {% endif %}
                     </div>
