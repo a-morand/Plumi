@@ -1,14 +1,18 @@
 {% include 'partials/head.twig' %}
 {% include 'partials/nav.twig' %}
-
-{% for answer in fill %}		
-		<h1>Question: {{ answer.question.id }}</h1>
-		<h1>Réponse: {{ answer.answer }}</h1>
-		{% if answer.success == 1 %}
-			<p>Réponse juste</p>
-		{% else %}
-			<p>Réponse fausse</p>
-		{% endif %}
+<div class="page__container--text results-title">
+	<h1>Consulter les résultats</h1>
+</div>
+{% for answer in fill %}
+		<h2 class="results-question-number">Numéro de la question: {{ answer.question.id }}</h2>
+		<h2 class="results-answer-patient">Réponse du patient : {{ answer.answer }}</h2>
+		<div class="text results-global-answers-box">
+			{% if answer.success == 1 %}
+				<div class="results-answer-true"></div>
+			{% else %}
+				<div class="results-answer-false">
+			{% endif %}
+		</div>
 {% endfor %}
 	
 {% include 'partials/foot.twig' %}
