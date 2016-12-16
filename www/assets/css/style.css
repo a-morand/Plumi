@@ -372,7 +372,7 @@ div.page__container p.question-input, div.page__container div.page__container--l
   margin-bottom: 50px;
 }
 div.page__container div.page__container--blockRep input {
-  margin-bottom: 90px;
+  margin-bottom: 50px;
   border: none;
   border-bottom: 2px solid #e2f3f4;
   box-shadow: none;
@@ -393,6 +393,8 @@ button.button-validate.is-primary, button.button.button-next.is-primary {
 }
 p.success {
   color: #7fce7f;
+  margin-bottom: 50px;
+  font-size: 16px;
 }
 @media screen and (max-width: 599px) {
   .page__container {
@@ -626,4 +628,17 @@ div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page
 
 .results-answer-true-text {
   font-family: 'Museo';
+}
+div.box h1 {
+  margin-bottom: 50px;
+}
+p.answer {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+p.fail {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 50px;
 }

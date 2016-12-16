@@ -33,11 +33,11 @@ class Admin
         $last_name = $post['last_name'];
 
         $admin = new \Model\Admin($app['db'], $app['session']);
-        
+
         if ($admin->signup($username, $password, $first_name, $last_name)) {
             return $app->redirect($app['url_generator']->generate('admin'));
         } else {
-            return $app['twig']->render('pages/admin.twig', $this->config);
+            return $app['twig']->render('pages/hub.twig', $this->config);
         }
     }
 }
