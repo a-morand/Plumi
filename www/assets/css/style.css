@@ -603,7 +603,7 @@ div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: green;
+  background-color: #74F991;
 }
 
 .results-answer-false {
@@ -612,7 +612,7 @@ div.page__containerOrtho div.container__ortho div.containerOrtho__right div.page
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #F97474;
 }
 
 .results-global-answers-box {
